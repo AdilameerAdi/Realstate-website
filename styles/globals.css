@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-white text-text-primary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded transition-all duration-300 no-underline;
+  }
+
+  .btn-primary {
+    @apply bg-brand-gold text-white hover:bg-yellow-600 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-brand-dark-blue text-brand-dark-blue hover:bg-brand-dark-blue hover:text-white;
+  }
+
+  .btn-call {
+    @apply bg-brand-dark-blue text-white hover:bg-blue-900;
+  }
+
+  .btn-whatsapp {
+    @apply bg-brand-gold text-brand-dark-blue hover:bg-yellow-600 hover:text-white;
+  }
+
+  .btn-small {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-large {
+    @apply px-8 py-4 text-lg;
+  }
+
+  .container {
+    @apply max-w-6xl mx-auto px-4;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold text-brand-dark-blue text-center mb-12;
+  }
+
+  .property-card {
+    @apply bg-white border border-border-light rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .property-slide {
+    @apply flex-none w-80 mr-6;
+  }
+
+  .slider-container {
+    @apply flex overflow-x-auto scroll-smooth pb-4;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .slider-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slider-btn {
+    @apply w-10 h-10 border-2 border-brand-dark-blue bg-white text-brand-dark-blue rounded-full cursor-pointer font-bold transition-all duration-300 flex items-center justify-center hover:bg-brand-dark-blue hover:text-white;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .container {
+      @apply px-2;
+    }
+
+    .property-slide {
+      @apply w-72 mr-4;
+    }
+
+    .section-title {
+      @apply text-2xl mb-8;
+    }
+
+    .btn-large {
+      @apply px-6 py-3 text-base;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .property-slide {
+      @apply w-64 mr-3;
+    }
+
+    .slider-container {
+      @apply pb-2;
+    }
+  }
+}
